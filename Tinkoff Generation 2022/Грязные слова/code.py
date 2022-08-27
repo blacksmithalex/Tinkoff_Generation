@@ -14,6 +14,8 @@ while r < len(a):
             a = a[:l] + shift(a[l: r]) + a[r:]
         while not(r1 or r2):
             r += 1
+            if r == len(a):
+                break
             r1 = 65 <= ord(a[r]) <= 90
             r2 = 97 <= ord(a[r]) <= 122
         l = r
