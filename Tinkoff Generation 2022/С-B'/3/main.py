@@ -12,9 +12,13 @@ else:
             diff.append([i, j])
         i += 1
         j -= 1
-    if len(diff) != 2:
-        print('NO')
-    else:
+    if len(diff) == 1:
+        i1, j1 = diff[0]
+        if a[len(a) // 2] == a[j1] or a[len(a) // 2] == a[i1]:
+            print('YES')
+        else:
+            print('NO')
+    elif len(diff) == 2:
         i1, j1 = diff[0]
         i2, j2 = diff[1]
         alls = set([a[i1], a[j1], a[i2], a[j2]])
@@ -22,5 +26,8 @@ else:
             print('YES')
         else:
             print('NO')
+    else:
+        print('NO')
+
 
 
