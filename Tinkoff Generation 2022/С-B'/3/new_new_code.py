@@ -17,7 +17,7 @@ else:
         j -= 1
     if len(diff) == 1:
         i1, j1 = diff[0]
-        if a[len(a) // 2] == a[j1] or a[len(a) // 2] == a[i1]:
+        if (len(a) % 2 == 1) and (a[len(a) // 2] == a[j1] or a[len(a) // 2] == a[i1]):
             print('YES')
         else:
             print('NO')
