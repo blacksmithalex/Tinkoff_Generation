@@ -2,8 +2,11 @@ def isPalindrom(a):
     return a == a[::-1]
 
 a = input()
+
 if isPalindrom(a):
     print('YES')
+elif len(a) == 2:
+    print('NO')
 else:
     i, j = 0, len(a) - 1
     diff = []
