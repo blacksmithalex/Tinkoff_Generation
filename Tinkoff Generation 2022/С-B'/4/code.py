@@ -19,7 +19,7 @@ for i in range(0, 13):
         Ndays[i] = 30
 
 comb = [[0, 1, 2], [0, 2, 1] , [1, 0, 2], [1, 2, 0], [2, 0, 1], [2, 1, 0]]
-flag = False
+res = set()
 for c in comb:
     extra = 0
     d, m, y = r[c[0]], r[c[1]], r[c[2]]
@@ -28,13 +28,15 @@ for c in comb:
     if (y % 4 == 0) and (y != 0):
         extra = 1
     if m == 2 and (Ndays[m] + extra >= d):
-        print(output(d, m, y))
-        flag = True
+        res.add(output(d, m, y))
     elif Ndays[m] >= d:
-        print(output(d, m, y))
-        flag = True
+        res.add(output(d, m, y))
 
-if flag == False:
+if len(res) == 0:
     print('No such date')
+else:
+    for x in res:
+        print(x)
+
 
 
