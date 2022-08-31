@@ -23,7 +23,7 @@ flag = False
 for c in comb:
     extra = 0
     d, m, y = r[c[0]], r[c[1]], r[c[2]]
-    if m > 12:
+    if m > 12 or m == 0 or d == 0:
         continue
     if (y % 4 == 0) and (y != 0):
         extra = 1
