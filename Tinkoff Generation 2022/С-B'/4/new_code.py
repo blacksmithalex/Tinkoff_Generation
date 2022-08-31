@@ -13,10 +13,10 @@ Ndays = [0] * 13
 for i in range(0, 13):
     if i == 2:
         Ndays[i] = 28
-    elif i % 2 == 0:
-        Ndays[i] = 30
-    else:
+    elif i in [1, 3, 5, 7, 8, 10, 12]:
         Ndays[i] = 31
+    else:
+        Ndays[i] = 30
 
 comb = [[0, 1, 2], [0, 2, 1] , [1, 0, 2], [1, 2, 0], [2, 0, 1], [2, 1, 0]]
 flag = False
@@ -27,9 +27,13 @@ for c in comb:
         continue
     if (y % 4 == 0) and (y != 0):
         extra = 1
-    if Ndays[m] + extra >= d:
+    if m == 2 and (Ndays[m] + extra >= d):
         print(output(d, m, y))
         flag = True
+    elif Ndays[m] >= d:
+        print(output(d, m, y))
+        flag = True
+
 if flag == False:
     print('No such date')
 
